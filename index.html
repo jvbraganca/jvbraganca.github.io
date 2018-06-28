@@ -39,15 +39,17 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
               </div>
-              <button id="clicker" class="btn btn-primary" onclick="log()">Submit</button>
+              <button id="clicker" class="btn btn-primary" onclick="linkClick()">Submit</button>
             </form>
           </div>
         </div>  
       </div>
     </div>
     <script type="text/javascript">
-      $("#clicker").click(function){
-        $.cookie('clicks', $.cookie('clicks') + 1);
+      var clicks = 0;
+      function linkClick() {
+          document.getElementById('clicker').value = ++clicks;
+          console.log(clicks);
       }
     </script>
     <!-- Optional JavaScript -->
